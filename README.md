@@ -96,9 +96,20 @@ app.use(errorHandler); //model = { error, message, statusCode }
 >
 > Error and not found handlers should be placed after all routers and middlewares
 
-> **:information_source: Error views:**
+You need to create a `notFound` and `error` views under `views` folder. See [views section](https://github.com/KeopsSociety/MagnetRouters#21-views) for more information and examples.
+
+Now, in any router you can call `next` to trigger manually the not found or error handler:
+```javascript
+//calling next will trigger not found handler
+next();
+
+//if passing error will trigger error handler
+next(error);
+```
+
+> **:information_source: Promise Rejection:**
 >
-> You need to create a `notFound` and `error` views under `views` folder. See [views section](https://github.com/KeopsSociety/MagnetRouters#21-views) for more information and examples.
+> If your router use an async handler, you need to capture the error yourself or app will crash, this is a Node behaviour. [More info](https://github.com/nodejs/node/issues/830).
 
 ### 2.1 Views
 
@@ -115,7 +126,7 @@ This is an example hierarchy for organizing your views:
     │   └── notFound.hbs        # Not found page
     └── ...
 
-Here is an example of error and notFound views:
+Here is an example of error and notFound views based on [Handlebars](https://github.com/handlebars-lang/handlebars.js):
 - error.hbs:
 
 ```html

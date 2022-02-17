@@ -1,6 +1,6 @@
 {
   "name": "@keops-society/magnet-routers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provide utilities for Express routers",
   "main": "lib/index.js",
   "scripts": {
@@ -12,11 +12,9 @@
     "url": "git+https://github.com/KeopsSociety/MagnetRouters.git"
   },
   "keywords": [
-    "Express",
-    "Router",
-    "Express router",
-    "Node",
-    "JavaScript"
+    "express",
+    "router",
+    "Magnet"
   ],
   "author": "Mansour Boutarbouch Mhaimeur",
   "license": "ISC",
